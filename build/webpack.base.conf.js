@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
@@ -27,14 +27,15 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+    publicPath:
+      process.env.NODE_ENV === 'production'
+        ? config.build.assetsPublicPath
+        : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {
@@ -48,7 +49,11 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [
+          resolve('src'),
+          resolve('test'),
+          resolve('node_modules/webpack-dev-server/client')
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -75,6 +80,17 @@ module.exports = {
         }
       }
     ]
+  },
+  externals: {
+    // vue标识 import Vue from vue
+    // Vue标识全局变量中的Vue
+    // import Vue from vue不会去node_modules中加载vue
+    vue: 'Vue',
+    'vue-router': 'VueRouter',
+    axios: 'axios',
+    'element-ui': 'ELEMENT',
+    moment: 'moment',
+    'vue-quill-editor': 'VueQuillEditor'
   },
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue

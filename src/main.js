@@ -10,7 +10,7 @@ import router from './router';
 import ElementUI from 'element-ui';
 // 引入ElementUI样式
 // eslint-disable-next-line semi
-import 'element-ui/lib/theme-chalk/index.css';
+// import 'element-ui/lib/theme-chalk/index.css';
 
 // 引入通用样式
 // eslint-disable-next-line semi
@@ -23,12 +23,9 @@ import moment from 'moment';
 // eslint-disable-next-line semi
 import VueQuillEditor from 'vue-quill-editor';
 // require styles
-// eslint-disable-next-line semi
-import 'quill/dist/quill.core.css';
-// eslint-disable-next-line semi
-import 'quill/dist/quill.snow.css';
-// eslint-disable-next-line semi
-import 'quill/dist/quill.bubble.css';
+// import 'quill/dist/quill.core.css'
+// import 'quill/dist/quill.snow.css'
+// import 'quill/dist/quill.bubble.css'
 
 // 引入axios
 // eslint-disable-next-line semi

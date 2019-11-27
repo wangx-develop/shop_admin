@@ -4,22 +4,37 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 // 导入自动以组件
-// eslint-disable-next-line semi
-import Login from '@/components/login.vue';
-// eslint-disable-next-line semi
-import Home from '@/components/home.vue';
-// eslint-disable-next-line semi
-import Users from '@/components/users/users.vue';
-// eslint-disable-next-line semi
-import Rights from '@/components/rights/rights.vue';
-// eslint-disable-next-line semi
-import Roles from '@/components/rights/roles.vue';
-// eslint-disable-next-line semi
-import Categories from '@/components/products/categories.vue';
-// eslint-disable-next-line semi
-import Goods from '@/components/products/goods.vue';
-// eslint-disable-next-line semi
-import Add from '@/components/products/add.vue';
+// import Login from "@/components/login.vue"
+// import Home from '@/components/home.vue'
+// import Users from '@/components/users/users.vue'
+// import Rights from '@/components/rights/rights.vue'
+// import Roles from '@/components/rights/roles.vue'
+// import Categories from '@/components/products/categories.vue'
+// import Goods from '@/components/products/goods.vue'
+// import Add from '@/components/products/add.vue'
+
+// 按需加载Login组件
+// const Login = function() {
+//   return import("@/components/login.vue");
+// };
+const Login = () =>
+  import(/* webpackChunkName: 'login' */ '@/components/login.vue')
+const Home = () =>
+  import(/* webpackChunkName: 'home' */ '@/components/home.vue')
+const Users = () =>
+  import(/* webpackChunkName: 'user' */ '@/components/users/users.vue')
+const Rights = () =>
+  import(/* webpackChunkName: 'right' */ '@/components/rights/rights.vue')
+const Roles = () =>
+  import(/* webpackChunkName: 'right' */ '@/components/rights/roles.vue')
+const Categories = () =>
+  import(
+    /* webpackChunkName: 'product' */ '@/components/products/categories.vue'
+  )
+const Goods = () =>
+  import(/* webpackChunkName: 'product' */ '@/components/products/goods.vue')
+const Add = () =>
+  import(/* webpackChunkName: 'product' */ '@/components/products/add.vue')
 
 Vue.use(Router)
 
